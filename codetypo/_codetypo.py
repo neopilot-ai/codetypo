@@ -25,19 +25,8 @@ import os
 import re
 import sys
 import textwrap
-from typing import (
-    Any,
-    Dict,
-    Iterable,
-    List,
-    Match,
-    Optional,
-    Pattern,
-    Sequence,
-    Set,
-    TextIO,
-    Tuple,
-)
+from typing import (Any, Dict, Iterable, List, Match, Optional, Pattern,
+                    Sequence, Set, TextIO, Tuple)
 
 if sys.platform == "win32":
     from ctypes import wintypes
