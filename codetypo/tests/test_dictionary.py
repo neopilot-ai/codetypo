@@ -8,11 +8,8 @@ from typing import Any, Optional
 
 import pytest
 
-from codetypo._codetypo import (
-    _builtin_dictionaries,
-    supported_languages,
-    word_regex_def,
-)
+from codetypo._codetypo import (_builtin_dictionaries, supported_languages,
+                                word_regex_def)
 
 spellers = {}
 
