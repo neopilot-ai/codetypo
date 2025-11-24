@@ -141,7 +141,7 @@ jobs:
           verbose: true
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: github.event_name == 'release' && github.event.action == 'published'
         with:
           name: ${{ github.ref_name }}
