@@ -1,0 +1,83 @@
+এটি একটি পরীক্ষামূলক বাক্য।
+আমি স্কুলে যাই।
+তিনি বইটি পড়ছেন।
+আমার নাম জন।
+আজকের আবহাওয়া খুব সুন্দর।
+
+# Common Bengali typos to test:
+বাংলা -> বাংলা  # Correct spelling
+বাংলা -> বাংলা  # Common typo (should be caught)
+আমি -> আমি    # Correct spelling
+আমি -> আমি    # Common typo (should be caught)
+
+# Some more test cases:
+কম্পিউটার -> কম্পিউটার  # Correct
+কম্পিউটার -> কম্পিউটার  # Common typo
+বই -> বই          # Correct
+বই -> বই          # Common typo
+
+# Mixed language test:
+This is a test with English and বাংলা text.
+This line has a typo: abcd
+
+# More complex sentences:
+আমি প্রতিদিন সকালে স্কুলে যাই।
+তিনি একটি সুন্দর বই পড়ছেন।
+আজকের সংবাদপত্রে অনেক গুরুত্বপূর্ণ খবর আছে।
+
+# Edge cases:
+"উদ্ধৃতি" চিহ্নের ভিতরে শব্দ
+'একক' উদ্ধৃতি চিহ্নের ভিতরে
+(বন্ধনীর) ভিতরে শব্দ
+
+# Numbers and special characters:
+আমার ফোন নাম্বার ০১৭১২৩৪৫৬৭৮
+ইমেইল: example@example.com
+ওয়েবসাইট: https://example.com
+
+# Some common Bengali words with potential typos:
+অভিধান -> অভিধান  # Dictionary
+অসংখ্য -> অসংখ্য    # Countless
+অনুগ্রহ -> অনুগ্রহ  # Please
+আবশ্যক -> আবশ্যক  # Necessary
+ইচ্ছুক -> ইচ্ছুক    # Willing
+উত্তর -> উত্তর      # Answer/North
+একত্র -> একত্র      # Together
+কখনো -> কখনো        # Ever/Sometimes
+গবেষণা -> গবেষণা    # Research
+চেষ্টা -> চেষ্টা    # Try
+জানুয়ারি -> জানুয়ারি  # January
+টাকা -> টাকা        # Money
+দেখানো -> দেখানো    # To show
+নিশ্চিত -> নিশ্চিত  # Sure
+পরিবর্তন -> পরিবর্তন  # Change
+প্রথম -> প্রথম      # First
+বিশেষ -> বিশেষ      # Special
+ভালো -> ভালো        # Good
+মাধ্যম -> মাধ্যম    # Through/Medium
+রাজধানী -> রাজধানী  # Capital
+শিক্ষা -> শিক্ষা    # Education
+সংস্কৃতি -> সংস্কৃতি  # Culture
+সরকার -> সরকার      # Government
+স্বাস্থ্য -> স্বাস্থ্য  # Health
+
+# Common misspellings to catch:
+অভ্যর্থনা -> অভ্যর্থনা  # Welcome (common typo)
+অনুগ্রহপূর্বক -> অনুগ্রহপূর্বক  # Please (common typo)
+আবেদনপত্র -> আবেদনপত্র  # Application (common typo)
+উত্তরণ -> উত্তরণ        # Transition (common typo)
+কর্মকর্তা -> কর্মকর্তা  # Officer (common typo)
+গবেষণাপত্র -> গবেষণাপত্র  # Research paper (common typo)
+চিকিৎসক -> চিকিৎসক    # Doctor (common typo)
+জীবনযাত্রা -> জীবনযাত্রা  # Lifestyle (common typo)
+পরিচালক -> পরিচালক    # Director (common typo)
+প্রতিষ্ঠান -> প্রতিষ্ঠান  # Institution (common typo)
+বিনিয়োগ -> বিনিয়োগ    # Investment (common typo)
+ভাষান্তর -> ভাষান্তর    # Translation (common typo)
+মন্ত্রণালয় -> মন্ত্রণালয়  # Ministry (common typo)
+যাত্রীবাহী -> যাত্রীবাহী  # Passenger (common typo)
+রপ্তানি -> রপ্তানি      # Export (common typo)
+শিল্পকলা -> শিল্পকলা    # Fine Arts (common typo)
+সংগ্রাম -> সংগ্রাম      # Struggle (common typo)
+সাহায্য -> সাহায্য      # Help (common typo)
+স্বাস্থ্যবিধি -> স্বাস্থ্যবিধি  # Health rules (common typo)

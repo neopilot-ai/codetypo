@@ -21,6 +21,10 @@ CodeTypo: Fixing Common Misspellings
 .. |stars| image:: https://img.shields.io/github/stars/khulnasoft/codetypo
    :alt: GitHub stars
 
+.. |bn| raw:: html
+
+   <span dir="rtl">বাংলা</span>
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Codetypo** is a lightweight tool designed to help developers and writers fix common misspellings in their text files. Specially optimized for source code, it skips backslash escapes, which helps maintain the integrity of your code's syntax by avoiding unintended modifications to escape sequences. While Codetypo doesn't rely on a complete dictionary, it detects a curated list of frequent misspellings, catching errors like "adn" while avoiding false positives with niche terms, such as "malloc" or "chmod," which are common in programming but not in general language usage. Whether you're reviewing code, documentation, or any text-based file, Codetypo streamlines the proofreading process, improving accuracy without unnecessary noise.
@@ -45,7 +49,34 @@ Install Codetypo using pip:
 
 Usage
 -----
-Below are some simple usage examples to demonstrate how the tool works, with brief explanations of what each command achieves for better context understanding. For exhaustive usage information, please check the output of ``codetypo -h``.
+Below are some simple usage examples to demonstrate how the tool works, with brief explanations of what each command achieves for better context understanding. For exhaustive usage information, please check the output of ``codetypo --help``.
+
+Bengali Language Support
+------------------------
+
+Codetypo includes support for Bengali (|bn|) language. To use Codetypo with Bengali text, you can use the built-in Bengali dictionary or provide your own custom dictionary.
+
+**Using the built-in Bengali dictionary:**
+
+.. code-block:: sh
+
+   codetypo --dictionary data/dictionary_bn.txt your_file.txt
+
+**Creating a custom Bengali dictionary:**
+
+1. Create a text file with the `.txt` extension
+2. Add words in the format: `word->correction` (one per line)
+3. Example:
+
+   .. code-block:: text
+
+      বই->বই
+      বাংলা->বাংলা
+      কম্পিউটার->কম্পিউটার
+
+4. Use your custom dictionary with the `-D` or `--dictionary` option
+
+**Note:** When working with Bengali text, ensure your files are saved with UTF-8 encoding to properly handle Bengali characters.
 
 Run Codetypo in all files of the current directory:
 

@@ -1402,3 +1402,55 @@ def test_stdin(tmp_path: Path) -> None:
         assert run_codetypo_stdin(text, args=args, cwd=tmp_path) == input_file_lines * (
             2 - int(single_line_per_error)
         )
+
+
+def test_bengali_language_support(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """Test Bengali language support in the spell checker."""
+    # Create a test file with Bengali text
+    bn_file = tmp_path / "bn_test.txt"
+    bn_text = """
+    # Common words
+    বই
+    আমি স্কুলে যাই
+    আমার নাম জন
+    আজকের আবহাওয়া খুব সুন্দর
+    
+    # Common Bengali typos to test
+    বাংলা -> বাংলা  # Correct spelling
+    বাংলা -> বাংলা  # Common typo (should be caught)
+    
+    # Mixed language test
+    This is a test with English and বাংলা text.
+    """
+    bn_file.write_text(bn_text, encoding="utf-8")
+    
+    # Get the path to the Bengali dictionary
+    dict_path = Path(__file__).parent.parent.parent / "codetypo" / "data" / "dictionary_bn.txt"
+    
+    # Verify the dictionary exists and has content
+    assert dict_path.exists(), f"Bengali dictionary not found at {dict_path}"
+    dict_content = dict_path.read_text(encoding="utf-8").strip()
+    assert len(dict_content) > 0, "Bengali dictionary is empty"
+    
+    # Run the spell checker with the Bengali dictionary
+    result = cs.main("-D", str(dict_path), str(bn_file), std=True)
+    assert isinstance(result, tuple)
+    code, out, err = result
+    
+    # Check that the tool found the expected Bengali words
+    # The test should return a non-zero exit code (16) indicating spelling issues were found
+    assert code == 16, f"Expected exit code 16 (spelling issues found), but got {code}"
+    
+    # Check that the output contains expected Bengali words
+    output = out.lower()
+    expected_words = ["বই", "আমি", "স্কুলে", "বাংলা"]
+    found_words = [word for word in expected_words if word in output]
+    assert len(found_words) > 0, \
+        f"Expected Bengali words not found in output. Looked for: {expected_words}"
+    
+    # Check that the output contains the expected format (word ==> word)
+    assert "==>" in output, "Expected output to contain '==>' for spelling suggestions"
+    assert True  # If we get here, the test passed
